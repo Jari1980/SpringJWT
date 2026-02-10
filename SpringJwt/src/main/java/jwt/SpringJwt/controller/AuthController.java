@@ -1,5 +1,7 @@
 package jwt.SpringJwt.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jwt.SpringJwt.dto.UserResponse;
 import jwt.SpringJwt.entity.User;
 import jwt.SpringJwt.service.AuthService;
@@ -25,6 +27,7 @@ public class AuthController {
     }
 
     // Login endpoint
+    @Operation(summary = "Login user and receive JWT token")
     @PostMapping("/login")
     public JwtResponse login(@RequestBody AuthRequest request) {
         String token = authService.login(request.getUsername(), request.getPassword());
@@ -32,6 +35,7 @@ public class AuthController {
     }
 
     // Get current user from JWT
+    @SecurityRequirement(name = "bearerAuth")
     @GetMapping("/me")
     public UserResponse me(@RequestHeader("Authorization") String authHeader) {
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {

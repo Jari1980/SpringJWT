@@ -28,7 +28,7 @@ Both applications:
 - Spring Data JPA
 - PostgreSQL
 - JJWT
-- (send app) Spring Security
+- (second app) Spring Security
 - Lombok
 - OpenAPI / Swagger
 

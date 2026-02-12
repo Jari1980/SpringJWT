@@ -37,7 +37,7 @@ Both applications:
 
 ### Database
 
-<i>File database, in root folder database, contain queries for creating database and table.<i>
+<i>File table.sql, in root folder database, contain queries for creating database and table.<i>
 1. Create two Database
 - CREATE DATABASE jwt_basic;
 - CREATE DATABASE jwt_security;
